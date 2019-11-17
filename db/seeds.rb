@@ -23,3 +23,7 @@ movies = [
         release_date: '11-jul-2019'
     }
 ]
+
+movies.each do |movie|
+    Movie.create!(movie)
+end
