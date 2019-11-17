@@ -1,2 +1,7 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<div class="container mt-2 p-2 shadow">
+    <form>
+       <h1>Filme: <%= @movie.title %></h1>
+       <strong>Descrição: </strong>
+       <%= @movie.description %>
+    </form>
+</div>
