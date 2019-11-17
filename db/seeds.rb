@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# filmes - movies
 movies = [
     {
         title: 'Rei leão',
@@ -27,3 +28,22 @@ movies = [
 movies.each do |movie|
     Movie.create!(movie)
 end
+
+# Atores - actors
+actors = [
+    { name: 'Roberto Justo' },
+    { name: 'Carla Maria' },
+    { name: 'Paulo Lima Neres' },
+    { name: 'Mariane Sousa' }
+]
+
+actors.each do |actor|
+    Actor.create!(actor)
+end
+
+# Diretores - directors
+directors = [
+    { name: 'Arthur Savóia' },
+    { name: 'Juliana Mendes' },
+    { name: 'Robert Figueredo' }
+]
