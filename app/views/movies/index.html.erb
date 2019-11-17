@@ -4,8 +4,9 @@
     <table id="movies" class="table table-hover table-responsive">
     <thead class="center">
         <tr>
-        <th>Title</th>
-        <th>Release</th>
+        <th>TÍTULO</th>
+        <th>DATA DE LANÇAMENTO</th>
+        <th>AÇÕES</th>
         </tr>
     </thead>
     <tbody class="center">
@@ -13,6 +14,15 @@
         <tr>
             <td><%= movie.title %></td>
             <td><%= movie.release_date %></td>
+            <td>
+                <%= link_to "ABRIR", "/movies/#{movie.id}", :class => "btn btn-primary" %>
+            </td>
+            <td>
+                <%= link_to "EDITAR", "/movies/#{movie.id}", :class => "btn btn-dark" %>
+            </td>
+            <td>
+                <%= link_to "EXCLUIR", "/movies/#{movie.id}", :class => "btn btn-danger" %>
+            </td>
         </tr>
         <% end %>
     </tbody>

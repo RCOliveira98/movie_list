@@ -1,7 +1,15 @@
 <div class="container mt-2 p-2 shadow">
     <form>
        <h1>Filme: <%= @movie.title %></h1>
-       <strong>Descrição: </strong>
-       <%= @movie.description %>
+       <p>
+        <strong>Descrição: </strong>
+        <%= @movie.description %>
+       </p>
+       <p>
+        <strong>Lançamento: </strong>
+        <%= @movie.release_date %>
+       </p>
+
+       <%= image_tag 'capa' %>
     </form>
 </div>

@@ -11,6 +11,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find get_id
+  rescue ActiveRecord::RecordNotFound
+    @movie = nil
+    render file: "#{Rails.root}/public/404.html", status: 404
   end
 
   private
