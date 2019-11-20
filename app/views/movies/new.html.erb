@@ -20,8 +20,9 @@
         <%= f.text_area :description, :class => 'form-control' %>
     </div>
     
-    <div>
+    <div class="mt-2">
         <%= f.submit 'ENVIAR', :class => 'btn btn-primary' %>
+        <%= link_to 'CANCELAR', movies_path, :class => 'btn btn-danger' %>
     </div>
     <% end %>
 </div>

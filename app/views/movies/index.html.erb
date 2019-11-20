@@ -2,14 +2,14 @@
     <h1 class="title">Movies</h1>
  
     <table id="movies" class="table table-hover table-responsive">
-    <thead class="center">
+    <thead>
         <tr>
         <th>TÍTULO</th>
         <th>DATA DE LANÇAMENTO</th>
         <th>AÇÕES</th>
         </tr>
     </thead>
-    <tbody class="center">
+    <tbody>
         <% @movies.each do |movie| %>
         <tr>
             <td><%= movie.title %></td>
@@ -18,7 +18,7 @@
                 <%= link_to "ABRIR", "/movies/#{movie.id}", :class => "btn btn-primary" %>
             </td>
             <td>
-                <%= link_to "EDITAR", "/movies/#{movie.id}", :class => "btn btn-dark" %>
+                <%= link_to "EDITAR", "/movies/edit/#{movie.id}", :class => "btn btn-dark" %>
             </td>
             <td>
                 <%= link_to "EXCLUIR", "/movies/#{movie.id}", :class => "btn btn-danger" %>

@@ -11,5 +11,9 @@
        </p>
 
        <%= image_tag 'capa' %>
+       <p class="mt-2">
+          <%= link_to 'Editar', "/movies/edit/#{@movie.id}", :class => 'btn btn-warning' %>
+          <%= link_to 'Voltar', movies_path, :class => 'btn btn-dark' %>
+       </p>
     </form>
 </div>
