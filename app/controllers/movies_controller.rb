@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     @movies = Movie.all
   end
@@ -13,7 +14,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
-      render :new
+      redirect_to movies_new_path
     end
   end
 
@@ -22,6 +23,16 @@ class MoviesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     @movie = nil
     render file: "#{Rails.root}/public/404.html", status: 404
+  end
+
+  def edit
+    @movie = Movie.find(get_id)
+  rescue ActiveRecord::RecordNotFound
+    @movie = nil
+    render file: "#{Rails.root}/public/404.html", status: 404
+  end
+
+  def update
   end
 
   private
