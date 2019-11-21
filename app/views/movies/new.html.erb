@@ -1,28 +1,6 @@
 <div class="container mt-2 p-2 shadow">
-    <%= form_for @movie, url: {controller: 'movies', action: 'create'} do |f| %>
-    <div class="field">
-        <%= f.label :title %>
-        <%= f.text_field :title, :class => 'form-control' %>
-    </div>
-    <div class="field">
-        <%= f.label :release_date %>
-        <%= f.date_select :release_date,
-            {
-                start_year: 1900,
-                order: [:day, :month, :year]
-            }, 
-            {
-                :class => 'form-control'
-            } %>
-    </div>
-    <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description, :class => 'form-control' %>
-    </div>
-    
-    <div class="mt-2">
-        <%= f.submit 'ENVIAR', :class => 'btn btn-primary' %>
-        <%= link_to 'CANCELAR', movies_path, :class => 'btn btn-danger' %>
-    </div>
-    <% end %>
+    <h1>
+       Novo filme
+    </h1>
+    <%= render partial: 'form', method: 'post', action: 'create' %>
 </div>

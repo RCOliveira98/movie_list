@@ -22,23 +22,25 @@ class MoviesController < ApplicationController
     @movie = Movie.find get_id
   rescue ActiveRecord::RecordNotFound
     @movie = nil
-    render file: "#{Rails.root}/public/404.html", status: 404
+    load_page_error
   end
 
   def edit
     @movie = Movie.find(get_id)
   rescue ActiveRecord::RecordNotFound
     @movie = nil
-    render file: "#{Rails.root}/public/404.html", status: 404
+    load_page_error
   end
 
   def update
     @movie = Movie.find(get_id)
     if @movie.update(movie_params)
-      redirect_to movies_path
+      redirect_to "/movies/#{get_id}"
     else
       render(:edit, id: @movie.id)
     end
+  rescue ActiveRecord::RecordNotFound
+    load_page_error
   end
 
   private
@@ -48,5 +50,9 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :release_date, :description)
+  end
+
+  def load_page_error
+    render file: "#{Rails.root}/public/404.html", status: 404
   end
 end
