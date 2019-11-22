@@ -1,4 +1,4 @@
-<%= form_for @movie, method: @method, url: {controller: 'movies', action: @action} do |f| %>
+<%= form_for @movie, method: @method, url: {controller: 'movies', action: @action}, local: true do |f| %>
     <div class="form-row">
         <div class="form-group col-md-6">
             <%= f.label :title %>

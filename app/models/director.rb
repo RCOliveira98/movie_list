@@ -1,2 +1,2 @@
-class Director < Professional
+class Director < ApplicationRecord
 end
