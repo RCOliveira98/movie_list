@@ -4,6 +4,7 @@
     <table id="movies" class="table table-hover table-responsive">
     <thead>
         <tr>
+        <th>ID</th>
         <th>TÍTULO</th>
         <th>DATA DE LANÇAMENTO</th>
         <th>AÇÕES</th>
@@ -12,6 +13,7 @@
     <tbody>
         <% @movies.each do |movie| %>
         <tr>
+            <td><%= movie.id %></td>
             <td><%= movie.title %></td>
             <td><%= movie.release_date %></td>
             <td>

@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, only: [:show, :edit, :update]
 
   def index
     @movies = Movie.all
@@ -35,7 +36,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(get_id)
     if @movie.update(movie_params)
-      redirect_to "/movies/#{get_id}"
+      redirect_to action: :show, id: movie.id
     else
       render(:edit, id: @movie.id)
     end
@@ -54,5 +55,11 @@ class MoviesController < ApplicationController
 
   def load_page_error
     render file: "#{Rails.root}/public/404.html", status: 404
+  end
+
+  def set_movie
+    @movie = Movie.find(get_id)
+  rescue ActiveRecord::RecordNotFound
+    load_page_error
   end
 end
